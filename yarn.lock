@@ -1896,9 +1896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"business-website-cf@workspace:.":
+"business-website@workspace:.":
   version: 0.0.0-use.local
-  resolution: "business-website-cf@workspace:."
+  resolution: "business-website@workspace:."
   dependencies:
     "@astrojs/cloudflare": "npm:^12.6.12"
     "@types/node": "npm:^25.0.10"
