@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPost from "../../components/BlogPost.astro";
+import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
-  const uniqueTags = [...new Set(allPosts.flatMap((post: any) => post.frontmatter.tags))]
+  const uniqueTags = [...new Set(allPosts.flatMap((post: any) => post.frontmatter.tags))];
   return uniqueTags.map((tag: string) => {
-    const posts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag))
-    return {params: {tag}, props: {posts}}
-  })
+    const posts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+    return {params: { tag }, props: { posts }};
+  });
 }
 
 const { tag } = Astro.params;
