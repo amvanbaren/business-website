@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 
 interface GreetingProps {
-  messages: string[]
+  messages: string[];
 }
 
 export default function Greeting(props: GreetingProps) {
