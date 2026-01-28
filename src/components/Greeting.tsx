@@ -1,10 +1,14 @@
 import { useState } from "preact/hooks";
 
-export default function Greeting({ messages }) {
-  const randomMessage = () =>
-    messages[Math.floor(Math.random() * messages.length)];
+interface GreetingProps {
+  messages: string[]
+}
 
-  const [greeting, setGreeting] = useState(messages[0]);
+export default function Greeting(props: GreetingProps) {
+  const randomMessage = () =>
+    props.messages[Math.floor(Math.random() * props.messages.length)];
+
+  const [greeting, setGreeting] = useState(props.messages[0]);
 
   return (
     <div>
