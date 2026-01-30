@@ -1,63 +1,80 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css";
 
 const pageTitle = "About Me";
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
-<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-  .skill {
-    color: var(--skillColor);
-    font-weight: bold;
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-</style>
 <BaseLayout pageTitle={pageTitle}>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
-    </li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-  {happy && <p>I am happy to be learning Astro!</p>}
-  {finished && <p>I finished this tutorial!</p>}
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
+  <p>
+    Every product reaches a point where things feel heavier than they should.
+    Performance dips. Architecture gets fuzzy. The roadmap slows down. I've
+    always been drawn to those moments — the places where clarity, structure,
+    and thoughtful engineering can unlock momentum again.
+  </p>
+  <p>
+    I'm a technical advisor and engineer who helps teams build fast, reliable,
+    maintainable products. My work sits at the intersection of performance,
+    architecture, and developer experience. I care deeply about systems that
+    feel good to work on and products that feel great to use.
+  </p>
+  <h2>My Approach</h2>
+  <p>
+    I believe good engineering is calm, intentional, and collaborative. I don't
+    show up with a rigid framework or a one‑size‑fits‑all playbook. Instead, I
+    work closely with your team to understand how things actually work today —
+    the constraints, the trade‑offs, the hidden complexity — and then help you
+    move toward a simpler, more reliable future. My focus is always on:
+    <ul>
+      <li>Clarity over cleverness</li>
+      <li>Long‑term maintainability over quick hacks</li>
+      <li>Practical solutions over theoretical purity</li>
+      <li>Empowering teams rather than creating dependency</li>
+    </ul>
+    I want your team to feel more confident, not more overwhelmed.
+  </p>
+  <h2>Where I Come From</h2>
+  <p>
+    I've spent years building and improving complex systems — from creative
+    tools and real‑time graphics pipelines to large React/Node.js applications
+    and fast‑moving startup products. I've been the person fixing the
+    performance issues no one else could reproduce, untangling the architecture
+    that grew too quickly, and smoothing out the release processes that slowed
+    teams down. Along the way, I've developed a deep appreciation for:
+    <ul>
+      <li>Clean, intentional architecture</li>
+      <li>Fast, predictable performance</li>
+      <li>Developer workflows that reduce friction</li>
+      <li>Tools that empower creativity</li>
+      <li>Systems that scale without becoming brittle</li>
+    </ul>
+    These aren't just technical preferences — they're the foundation of products that
+    last.
+  </p>
+  <h2>How I Think About Engineering</h2>
+  <p>
+    To me, engineering is a craft. It's not just about writing code; it's about
+    shaping systems that support the people who build them and the people who
+    use them. I'm happiest when I'm helping teams:
+    <ul>
+      <li>Understand the real root cause of a problem</li>
+      <li>Make decisions with clarity instead of guesswork</li>
+      <li>Build features without creating future chaos</li>
+      <li>Improve performance in ways that actually matter</li>
+      <li>Create workflows that make shipping feel effortless</li>
+    </ul>
+    Good engineering creates momentum. My work is about restoring that momentum when
+    it starts to slip.
+  </p>
+  <h2>Outside the Work</h2>
+  <p>
+    I'm endlessly curious about creative tooling, generative visuals, and the
+    intersection of art and engineering. I love building tools that empower
+    creators, exploring new rendering techniques, and experimenting with ways to
+    make complex systems feel intuitive.
+  </p>
+    <p>
+    That curiosity shapes how I work: always learning, always refining, always
+    looking for the simplest path that still respects the complexity of the
+    problem.
+  </p>
 </BaseLayout>
