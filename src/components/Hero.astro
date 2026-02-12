@@ -46,13 +46,21 @@ const {
       {description}
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
-      <Button variant="primary" size="lg" href={primaryButtonHref}
-        ><b>{primaryButtonText}</b></Button
+      <Button
+        variant="primary"
+        size="lg"
+        class="font-semibold"
+        href={primaryButtonHref}>{primaryButtonText}</Button
       >
       {
         secondaryButtonText && (
-          <Button variant="outline" size="lg" href={secondaryButtonHref}>
-            <b>{secondaryButtonText}</b>
+          <Button
+            variant="outline"
+            size="lg"
+            class="font-semibold"
+            href={secondaryButtonHref}
+          >
+            {secondaryButtonText}
           </Button>
         )
       }

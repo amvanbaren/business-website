@@ -15,7 +15,12 @@ type Props = HTMLAttributes<"div"> & {
   children: any;
 };
 
-const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Astro.props;
+const {
+  class: className,
+  openOnHover = false,
+  closeDelay = 200,
+  ...rest
+} = Astro.props;
 ---
 
 <div
@@ -47,10 +52,14 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
     constructor(dropdown: HTMLElement, dropdownIdx: number) {
       this.dropdown = dropdown;
       this.openOnHover = dropdown.getAttribute("data-open-on-hover") === "true";
-      this.closeDelay = parseInt(dropdown.getAttribute("data-close-delay") || "200");
+      this.closeDelay = parseInt(
+        dropdown.getAttribute("data-close-delay") || "200",
+      );
 
       // Get the temporary trigger element
-      const tempTrigger = dropdown.querySelector(".starwind-dropdown-trigger") as HTMLElement;
+      const tempTrigger = dropdown.querySelector(
+        ".starwind-dropdown-trigger",
+      ) as HTMLElement;
 
       // if trigger is set with asChild, use the first child element for trigger button
       if (tempTrigger?.hasAttribute("data-as-child")) {
@@ -111,7 +120,10 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
           e.preventDefault();
           this.lastCloseSource = "keyboard";
           this.closeDropdown();
-        } else if (this.isOpen && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+        } else if (
+          this.isOpen &&
+          (e.key === "ArrowDown" || e.key === "ArrowUp")
+        ) {
           e.preventDefault();
           this.lastOpenSource = "keyboard";
           this.updateDropdownItems();
@@ -129,7 +141,11 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
           // only call handler if it's the left button (mousedown gets triggered by all mouse buttons)
           // but not when the control key is pressed (avoiding MacOS right click); also not for touch
           // devices because that would open the menu on scroll. (pen devices behave as touch on iOS).
-          if (e.button === 0 && e.ctrlKey === false && e.pointerType === "mouse") {
+          if (
+            e.button === 0 &&
+            e.ctrlKey === false &&
+            e.pointerType === "mouse"
+          ) {
             this.closeDropdown();
           }
         }
@@ -138,7 +154,10 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
       // Handle click outside select content to close for mobile
       document.addEventListener("click", (e) => {
         if (
-          !(this.trigger?.contains(e.target as Node) || this.content?.contains(e.target as Node)) &&
+          !(
+            this.trigger?.contains(e.target as Node) ||
+            this.content?.contains(e.target as Node)
+          ) &&
           this.isOpen
         ) {
           this.closeDropdown();
@@ -171,7 +190,11 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
       this.content.addEventListener("mouseover", (e) => {
         const target = e.target as HTMLElement;
         const menuItem = target.closest('[role="menuitem"]');
-        if (menuItem && menuItem instanceof HTMLElement && this.isOpen === true) {
+        if (
+          menuItem &&
+          menuItem instanceof HTMLElement &&
+          this.isOpen === true
+        ) {
           // Update items list before focusing to ensure the index is correct
           this.updateDropdownItems();
 
@@ -228,7 +251,9 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
           break;
         case "ArrowUp":
           e.preventDefault();
-          this.focusItem(currentIdx === -1 ? this.items.length - 1 : currentIdx - 1);
+          this.focusItem(
+            currentIdx === -1 ? this.items.length - 1 : currentIdx - 1,
+          );
           break;
         case "Home":
           e.preventDefault();
@@ -252,7 +277,9 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
       if (!this.content) return;
       // Get all interactive menuitem elements
       this.items = Array.from(
-        this.content.querySelectorAll('[role="menuitem"]:not([data-disabled="true"])'),
+        this.content.querySelectorAll(
+          '[role="menuitem"]:not([data-disabled="true"])',
+        ),
       ) as HTMLElement[];
     }
 
@@ -366,7 +393,10 @@ const { class: className, openOnHover = false, closeDelay = 200, ...rest } = Ast
   const initDropdowns = () => {
     document.querySelectorAll(".starwind-dropdown").forEach((dropdown) => {
       if (dropdown instanceof HTMLElement && !dropdownInstances.has(dropdown)) {
-        dropdownInstances.set(dropdown, new DropdownHandler(dropdown, dropdownCounter++));
+        dropdownInstances.set(
+          dropdown,
+          new DropdownHandler(dropdown, dropdownCounter++),
+        );
       }
     });
   };

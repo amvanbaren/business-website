@@ -25,7 +25,9 @@ const { title, description, action, href } = Astro.props;
   <CardContent class="h-full">
     <div class="h-full flex flex-col gap-4 items-start justify-between">
       <p>{description}</p>
-      <Button variant="outline" href={href}><b>{action}</b></Button>
+      <Button variant="outline" class="font-semibold" href={href}
+        >{action}</Button
+      >
     </div>
   </CardContent>
 </Card>

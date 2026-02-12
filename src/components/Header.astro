@@ -2,7 +2,14 @@
 import type { HTMLAttributes } from "astro/types";
 import { tv } from "tailwind-variants";
 import Button from "@/components/starwind/button";
-import { Dropdown, DropdownTrigger, DropdownContent, DropdownItem, DropdownLabel, DropdownSeparator } from "@/components/starwind/dropdown";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
+  DropdownLabel,
+  DropdownSeparator,
+} from "@/components/starwind/dropdown";
 import Menu2 from "@tabler/icons/outline/menu-2.svg";
 
 interface Props extends HTMLAttributes<"header"> {
@@ -21,20 +28,42 @@ const { class: className, ...rest } = Astro.props;
     <div class="flex justify-between items-center">
       <div><a href="/" class="text-2xl font-extrabold">PRECIES.</a></div>
       <nav class="hidden sm:flex sm:gap-6">
-        <Button variant="ghost" href="/consulting/"><b>Consulting</b></Button>
-        <Button variant="ghost" href="/about/"><b>About</b></Button>
-        <Button variant="primary"><b>Book a Call</b></Button>
+        <Button variant="ghost" href="/consulting/" class="font-semibold"
+          >Consulting</Button
+        >
+        <Button variant="ghost" href="/about/" class="font-semibold"
+          >About</Button
+        >
+        <Button variant="primary" class="font-semibold">Book a Call</Button>
       </nav>
       <Dropdown class="sm:hidden">
         <DropdownTrigger asChild>
-          <Button variant="ghost"><Menu2/></Button>
+          <Button variant="ghost"><Menu2 /></Button>
         </DropdownTrigger>
         <nav>
-        <DropdownContent align="end" class="flex flex-col gap-2 bg-background">
-            <DropdownItem as="a" href="/consulting/" class="focus:bg-muted focus:text-foreground cursor-pointer"><b>Consulting</b></DropdownItem>
-            <DropdownItem as="a" href="/about/" class="focus:bg-muted focus:text-foreground cursor-pointer"><b>About</b></DropdownItem>
-            <DropdownItem as="a" href="#" class="bg-primary text-primary-foreground focus:bg-primary/90 cursor-pointer"><b>Book a Call</b></DropdownItem>
-        </DropdownContent>
+          <DropdownContent
+            align="end"
+            class="flex flex-col gap-2 bg-background"
+          >
+            <DropdownItem
+              as="a"
+              href="/consulting/"
+              class="focus:bg-muted focus:text-foreground cursor-pointer font-semibold"
+              >Consulting</DropdownItem
+            >
+            <DropdownItem
+              as="a"
+              href="/about/"
+              class="focus:bg-muted focus:text-foreground cursor-pointer font-semibold"
+              >About</DropdownItem
+            >
+            <DropdownItem
+              as="a"
+              href="#"
+              class="bg-primary text-primary-foreground focus:bg-primary/90 cursor-pointer font-semibold"
+              >Book a Call</DropdownItem
+            >
+          </DropdownContent>
         </nav>
       </Dropdown>
     </div>
