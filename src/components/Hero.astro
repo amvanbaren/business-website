@@ -20,7 +20,7 @@ interface Props extends HTMLAttributes<"section"> {
 }
 
 const heroStyles = tv({
-  base: "@container mx-auto w-full px-4 py-24",
+  base: "@container mx-auto w-full px-4",
 });
 
 const {
@@ -37,17 +37,21 @@ const {
 
 <section class={heroStyles({ class: className })} {...rest}>
   <div class="mx-auto flex max-w-4xl flex-col items-center text-center">
-    <h1 class="font-heading text-4xl font-semibold tracking-tight @xl:text-5xl @3xl:text-6xl">
+    <h1
+      class="font-heading text-4xl font-semibold tracking-tight @xl:text-5xl @3xl:text-6xl"
+    >
       {heading}
     </h1>
     <p class="text-muted-foreground mt-6 max-w-2xl @xl:text-lg">
       {description}
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
-      <Button variant="primary" href={primaryButtonHref}><b>{primaryButtonText}</b></Button>
+      <Button variant="primary" size="lg" href={primaryButtonHref}
+        ><b>{primaryButtonText}</b></Button
+      >
       {
         secondaryButtonText && (
-          <Button variant="outline" href={secondaryButtonHref}>
+          <Button variant="outline" size="lg" href={secondaryButtonHref}>
             <b>{secondaryButtonText}</b>
           </Button>
         )
