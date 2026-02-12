@@ -36,9 +36,6 @@ const socialLinks: SocialLink[] = [
     <Header />
     <h1>{pageTitle}</h1>
     <slot />
-    <Footer socialLinks={socialLinks} companyName={companyName} />
-    <script>
-      import "../scripts/menu.ts";
-    </script>
+    <Footer socialLinks={socialLinks} companyName={companyName} class="py-6" />
   </body>
 </html>
