@@ -1,13 +1,12 @@
+import tailwindcss from "@tailwindcss/vite";
 // @ts-check
 import { defineConfig } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
 
-import preact from "@astrojs/preact";
-
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+	site: "http://localhost:4321",
 
   adapter: cloudflare({
     platformProxy: {
@@ -16,6 +15,7 @@ export default defineConfig({
 
     imageService: "cloudflare",
   }),
-
-  integrations: [preact()],
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
