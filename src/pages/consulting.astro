@@ -1,143 +1,146 @@
 ---
+import ServicePage from "@/components/ServicePage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "@/components/starwind/button";
 
 const pageTitle = "Consulting";
+const description =
+  "Every team hits moments where the product feels slow, the architecture feels heavy, or the roadmap feels impossible to execute. I help teams cut through that complexity so they can move forward with clarity and confidence.";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>
-    Every team hits moments where the product feels slow, the architecture feels
-    heavy, or the roadmap feels impossible to execute. I help teams cut through
-    that complexity so they can move forward with clarity and confidence.
-  </p>
-  <h2>What I Do</h2>
-  <p>
-    My consulting work is hands‑on, collaborative, and focused on building
-    systems that are fast, stable, and easy to work with. I diagnose the real
-    issues behind performance, reliability, and delivery friction—guiding your
-    team toward solutions that are clear, maintainable, and built to last.
-  </p>
-  <h3>Performance Optimization & Technical Diagnostics</h3>
-  <p>
-    Software applications slow down for all kinds of reasons: hidden
-    bottlenecks, architectural drift, or small decisions that compound over
-    time. I help teams uncover the real causes behind performance issues and fix
-    them with clarity and precision. You get faster load times, smoother
-    interactions, and a system that feels reliable instead of fragile.
-  </p>
-  <p>
-    Typical outcomes:
-    <ul>
-      <li>Reduced crashes and error rates.</li>
-      <li>Faster, more responsive user experience.</li>
-      <li>Practical fixes that don't create new debt.</li>
-    </ul>
-  </p>
-  <h3>Software Reliability & Scalability Improvements</h3>
-  <p>
-    As your product grows, reliability becomes as important as features. I help
-    teams strengthen their systems so they can handle more users, more data, and
-    more complexity without breaking. You gain confidence that your product can
-    scale without hidden surprises.
-  </p>
-  <p>
-    Typical outcomes:
-    <ul>
-      <li>Reduced operational risk for the team.</li>
-      <li>Systems that stay up when traffic spikes.</li>
-      <li>Cleaner architecture that supports growth.</li>
-    </ul>
-  </p>
-  <h3>Release Engineering & Workflow Improvements</h3>
-  <p>
-    Shipping should feel smooth, not stressful. I work with teams to improve
-    their build pipelines, release processes, and development workflows so they
-    can move faster with less friction. The goal is simple: make it easier for
-    your team to deliver great work without fighting the tools.
-  </p>
-  <p>
-    Typical outcomes:
-    <ul>
-      <li>Faster, more reliable deployments.</li>
-      <li>A calmer, more predictable release cycle.</li>
-      <li>Clearer processes that unblock developers.</li>
-    </ul>
-  </p>
-  <h3>Feature Development with Architectural Clarity</h3>
-  <p>
-    When you're shipping new features, you don't want to introduce complexity
-    that slows you down later on. I help teams design and build features that
-    fit cleanly into the existing system — or reshape it when needed. You get
-    progress without the hidden cost.
-  </p>
-  <p>
-    Typical outcomes:
-    <ul>
-      <li>Features that are maintainable from day one.</li>
-      <li>Lower total cost of ownership for new functionality.</li>
-      <li>A product that evolves without accumulating chaos.</li>
-    </ul>
-  </p>
-  <h2>Who I Work With</h2>
-  <p>
-    I partner with teams who care about clarity, quality, and long‑term
-    maintainability. Most of my clients fall into one of these groups:
-    <ul>
-      <li>
-        <b>Product teams shipping complex applications.</b> Teams that need help diagnosing
-        performance issues, improving reliability, or making architectural decisions
-        with confidence.
-      </li>
-      <li>
-        <b>Early-stage startups.</b> Companies moving fast but starting to feel the
-        weight of technical debt, unclear architecture, or slow delivery cycles.
-      </li>
-      <li>
-        <b>Engineering teams that want a trusted technical advisor.</b> Leads and
-        founders who want a clear, experienced voice to help them make better technical
-        decisions and avoid costly mistakes.
-      </li>
-    </ul>
-    If your team values thoughtful engineering, clear communication, and practical
-    solutions, we'll work well together.
-  </p>
-  <h2>How I Work</h2>
-  <p>
-    Working with me is straightforward and intentionally lightweight. My goal is
-    to bring clarity, momentum, and technical confidence to your team without
-    adding overhead or complexity.
-    <ol>
-      <li>
-        <b>Fit Call.</b>
-        A short conversation to understand your challenges, your goals, and whether
-        I'm the right person to help. If I'm not, I'll point you in the right direction.
-      </li><li>
-        <b>Deep Dive.</b>
-        If we're a match, we start with a focused outside-in exploration. I analyze
-        the product experience and observability data alongside your codebase. This
-        gives me the context I need to identify the real issues causing technical
-        debt, system instability, or release delays.
-      </li><li>
-        <b>Engagement</b>
-        Depending on your needs, this can be weekly advisory, a targeted audit, or
-        a short project. I work closely with your team, offering clear guidance, and
-        practical solutions that fit your roadmap.
-      </li><li>
-        <b>Ongoing Support or Handoff</b>
-        Once the core work is done, I either stay on as a technical sounding board
-        or hand everything off with clear next steps. The goal is always the same:
-        leave your team stronger and more confident than before.
-      </li>
-    </ol>
-    This process keeps things simple, predictable, and focused on outcomes.
-  </p>
-  <h2>Book a Fit Call</h2>
-  <p>
-    If this resonates, I'd love to learn more about what you're building. Let's
-    have a short, friendly conversation where we explore your challenges, your
-    goals, and whether I'm the right person to help. No pressure, no hard sell —
-    just clarity.
-  </p>
-  <button>Discuss your project</button>
-  <br /><em>Book a fit call and we'll take it from there.</em>
+  <ServicePage title={pageTitle} description={description}>
+    <h2>What I Do</h2>
+    <p>
+      My consulting work is hands‑on, collaborative, and focused on building
+      systems that are fast, stable, and easy to work with. I diagnose the real
+      issues behind performance, reliability, and delivery friction—guiding your
+      team toward solutions that are clear, maintainable, and built to last.
+    </p>
+    <h3>Performance Optimization & Technical Diagnostics</h3>
+    <p>
+      Software applications slow down for all kinds of reasons: hidden
+      bottlenecks, architectural drift, or small decisions that compound over
+      time. I help teams uncover the real causes behind performance issues and
+      fix them with clarity and precision. You get faster load times, smoother
+      interactions, and a system that feels reliable instead of fragile.
+    </p>
+    <p>
+      Typical outcomes:
+      <ul>
+        <li><b>Reduced crashes and error rates.</b></li>
+        <li><b>Faster, more responsive user experience.</b></li>
+        <li><b>Practical fixes that don't create new debt.</b></li>
+      </ul>
+    </p>
+    <h3>Software Reliability & Scalability Improvements</h3>
+    <p>
+      As your product grows, reliability becomes as important as features. I
+      help teams strengthen their systems so they can handle more users, more
+      data, and more complexity without breaking. You gain confidence that your
+      product can scale without hidden surprises.
+    </p>
+    <p>
+      Typical outcomes:
+      <ul>
+        <li><b>Reduced operational risk for the team.</b></li>
+        <li><b>Systems that stay up when traffic spikes.</b></li>
+        <li><b>Cleaner architecture that supports growth.</b></li>
+      </ul>
+    </p>
+    <h3>Release Engineering & Workflow Improvements</h3>
+    <p>
+      Shipping should feel smooth, not stressful. I work with teams to improve
+      their build pipelines, release processes, and development workflows so
+      they can move faster with less friction. The goal is simple: make it
+      easier for your team to deliver great work without fighting the tools.
+    </p>
+    <p>
+      Typical outcomes:
+      <ul>
+        <li><b>Faster, more reliable deployments.</b></li>
+        <li><b>A calmer, more predictable release cycle.</b></li>
+        <li><b>Clearer processes that unblock developers.</b></li>
+      </ul>
+    </p>
+    <h3>Feature Development with Architectural Clarity</h3>
+    <p>
+      When you're shipping new features, you don't want to introduce complexity
+      that slows you down later on. I help teams design and build features that
+      fit cleanly into the existing system — or reshape it when needed. You get
+      progress without the hidden cost.
+    </p>
+    <p>
+      Typical outcomes:
+      <ul>
+        <li><b>Features that are maintainable from day one.</b></li>
+        <li><b>Lower total cost of ownership for new functionality.</b></li>
+        <li><b>A product that evolves without accumulating chaos.</b></li>
+      </ul>
+    </p>
+    <h2>Who I Work With</h2>
+    <p>
+      I partner with teams who care about clarity, quality, and long‑term
+      maintainability. Most of my clients fall into one of these groups:
+      <ul>
+        <li>
+          <b>Product teams shipping complex applications.</b> Teams that need help
+          diagnosing performance issues, improving reliability, or making architectural
+          decisions with confidence.
+        </li>
+        <li>
+          <b>Early-stage startups.</b> Companies moving fast but starting to feel
+          the weight of technical debt, unclear architecture, or slow delivery cycles.
+        </li>
+        <li>
+          <b>Engineering teams that want a trusted technical advisor.</b> Leads and
+          founders who want a clear, experienced voice to help them make better technical
+          decisions and avoid costly mistakes.
+        </li>
+      </ul>
+      If your team values thoughtful engineering, clear communication, and practical
+      solutions, we'll work well together.
+    </p>
+    <h2>How I Work</h2>
+    <p>
+      Working with me is straightforward and intentionally lightweight. My goal
+      is to bring clarity, momentum, and technical confidence to your team
+      without adding overhead or complexity.
+      <ol>
+        <li>
+          <b>Fit Call.</b>
+          A short conversation to understand your challenges, your goals, and whether
+          I'm the right person to help. If I'm not, I'll point you in the right direction.
+        </li><li>
+          <b>Deep Dive.</b>
+          If we're a match, we start with a focused outside-in exploration. I analyze
+          the product experience and observability data alongside your codebase. This
+          gives me the context I need to identify the real issues causing technical
+          debt, system instability, or release delays.
+        </li><li>
+          <b>Engagement.</b>
+          Depending on your needs, this can be weekly advisory, a targeted audit,
+          or a short project. I work closely with your team, offering clear guidance,
+          and practical solutions that fit your roadmap.
+        </li><li>
+          <b>Ongoing Support or Handoff.</b>
+          Once the core work is done, I either stay on as a technical sounding board
+          or hand everything off with clear next steps. The goal is always the same:
+          leave your team stronger and more confident than before.
+        </li>
+      </ol>
+      This process keeps things simple, predictable, and focused on outcomes.
+    </p>
+    <h2>Book a Fit Call</h2>
+    <p>
+      If this resonates, I'd love to learn more about what you're building.
+      Let's have a short, friendly conversation where we explore your
+      challenges, your goals, and whether I'm the right person to help. No
+      pressure, no hard sell — just clarity.
+    </p>
+    <div class="flex flex-col gap-2 items-start">
+      <Button variant="primary" size="lg">Discuss your project</Button>
+      <em>Book a fit call and we'll take it from there.</em>
+    </div>
+  </ServicePage>
 </BaseLayout>
