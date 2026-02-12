@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<"header"> {
 }
 
 const headerStyles = tv({
-  base: "@container w-full border-b py-12",
+  base: "@container w-full sticky top-0 z-10 border-b bg-background py-12",
 });
 
 const { class: className, ...rest } = Astro.props;
