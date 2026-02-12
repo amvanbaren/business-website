@@ -34,14 +34,14 @@ const socialLinks: SocialLink[] = [
   </head>
   <body>
     <div class="min-h-screen flex flex-col">
-      <Header class="py-4"/>
+      <Header class="py-4" />
       <main style="flex: 1">
         <slot />
       </main>
       <Footer
         socialLinks={socialLinks}
         companyName={companyName}
-        class="py-4"
+        class="py-2"
       />
     </div>
   </body>
