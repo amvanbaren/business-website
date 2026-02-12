@@ -1,8 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro"
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+<Hero
+  heading="Software consultant for teams that want clarity and confidence"
+  description="I help engineering teams solve performance issues, strengthen reliability, and ship faster without accumulating extra debt. If your product feels fragile or your roadmap has stalled, let's talk."
+  primaryButtonText="Schedule a Call"
+  primaryButtonHref="#"
+/>
 </BaseLayout>
