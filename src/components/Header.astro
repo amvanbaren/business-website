@@ -1,7 +1,9 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { tv } from "tailwind-variants";
-import Button from "./starwind/button";
+import Button from "@/components/starwind/button";
+import { Dropdown, DropdownTrigger, DropdownContent, DropdownItem, DropdownLabel, DropdownSeparator } from "@/components/starwind/dropdown";
+import Menu2 from "@tabler/icons/outline/menu-2.svg";
 
 interface Props extends HTMLAttributes<"header"> {
   class?: string;
@@ -18,11 +20,23 @@ const { class: className, ...rest } = Astro.props;
   <div class="mx-auto w-full max-w-7xl px-4">
     <div class="flex justify-between items-center">
       <div><a href="/" class="text-2xl font-extrabold">PRECIES.</a></div>
-      <nav class="flex gap-4 sm:gap-6">
+      <nav class="hidden sm:flex sm:gap-6">
         <Button variant="ghost" href="/consulting/"><b>Consulting</b></Button>
         <Button variant="ghost" href="/about/"><b>About</b></Button>
         <Button variant="primary"><b>Book a Call</b></Button>
       </nav>
+      <Dropdown class="sm:hidden">
+        <DropdownTrigger asChild>
+          <Button variant="ghost"><Menu2/></Button>
+        </DropdownTrigger>
+        <nav>
+        <DropdownContent align="end" class="flex flex-col gap-2 bg-background">
+            <DropdownItem as="a" href="/consulting/" class="focus:bg-muted focus:text-foreground cursor-pointer"><b>Consulting</b></DropdownItem>
+            <DropdownItem as="a" href="/about/" class="focus:bg-muted focus:text-foreground cursor-pointer"><b>About</b></DropdownItem>
+            <DropdownItem as="a" href="#" class="bg-primary text-primary-foreground focus:bg-primary/90 cursor-pointer"><b>Book a Call</b></DropdownItem>
+        </DropdownContent>
+        </nav>
+      </Dropdown>
     </div>
   </div>
 </header>
