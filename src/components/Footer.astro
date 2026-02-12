@@ -77,16 +77,16 @@ const currentYear = new Date().getFullYear();
         size="sm"
         class="text-muted-foreground hover:text-foreground"
       >
-        <Sun
-          slot="light-icon"
-          class="hidden size-5 group-data-[state=off]:data-ready:block"
-          data-theme-icon
-        />
-        <Moon
-          slot="dark-icon"
-          class="hidden size-5 group-data-[state=on]:data-ready:block"
-          data-theme-icon
-        />
+        <span class="size-5" data-theme-icon-wrapper>
+          <Sun
+            class="hidden size-5 group-data-[state=off]:data-ready:block"
+            data-theme-icon
+          />
+          <Moon
+            class="hidden size-5 group-data-[state=on]:data-ready:block"
+            data-theme-icon
+          />
+        </span>
       </ThemeToggle>
     </div>
   </div>

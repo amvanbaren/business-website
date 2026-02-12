@@ -52,16 +52,17 @@ const {
 } = Astro.props;
 
 const dataState = defaultPressed ? "on" : "off";
+const {"data-slot": dataSlot, ...cleanRest} = rest
 ---
 
 <button
   type="button"
   class={toggle({ variant, size, class: `starwind-toggle ${className || ""}` })}
-  data-slot="toggle"
+  data-slot={dataSlot ?? "toggle"}
   data-state={dataState}
   data-sync-group={syncGroup}
   aria-pressed={defaultPressed}
-  {...rest}
+  {...cleanRest}
 >
   <slot />
 </button>
