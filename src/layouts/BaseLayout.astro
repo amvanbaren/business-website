@@ -4,8 +4,10 @@ import IconBrandGithub from "@tabler/icons/filled/brand-github.svg";
 import IconBrandLinkedin from "@tabler/icons/filled/brand-linkedin.svg";
 import Header from "../components/Header.astro";
 import Footer, { SocialLink } from "../components/Footer.astro";
+import ThemeInit from "@/components/starwind/theme-toggle/ThemeInit.astro";
 
 const { pageTitle } = Astro.props;
+const companyName = "Precies. Software OÜ";
 const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
@@ -25,6 +27,7 @@ const socialLinks: SocialLink[] = [
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <ThemeInit />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
@@ -33,7 +36,7 @@ const socialLinks: SocialLink[] = [
     <Header />
     <h1>{pageTitle}</h1>
     <slot />
-    <Footer socialLinks={socialLinks} companyName="Precies. Software OÜ" />
+    <Footer socialLinks={socialLinks} companyName={companyName} />
     <script>
       import "../scripts/menu.ts";
     </script>

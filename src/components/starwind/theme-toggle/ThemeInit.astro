@@ -7,7 +7,10 @@
     const colorTheme = localStorage.getItem("colorTheme");
     if (!colorTheme) {
       // if no color theme yet, use the users preferences
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("colorTheme", "dark");
       } else {
@@ -22,7 +25,9 @@
         document.documentElement.classList.remove("dark");
       } else if (colorTheme === "system") {
         // use system preference
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         document.documentElement.classList.toggle("dark", prefersDark);
       }
     }

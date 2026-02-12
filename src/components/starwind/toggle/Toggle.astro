@@ -6,7 +6,7 @@ export const toggle = tv({
   base: [
     "inline-flex items-center justify-center gap-2 rounded-md font-medium whitespace-nowrap",
     "disabled:pointer-events-none disabled:opacity-50",
-    "data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
+    "data-[state=on]:bg-accent",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
     "focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:ring-3",
     "transition-colors outline-none",
@@ -42,7 +42,14 @@ type Props = VariantProps<typeof toggle> &
     syncGroup?: string;
   };
 
-const { class: className, defaultPressed = false, syncGroup, variant, size, ...rest } = Astro.props;
+const {
+  class: className,
+  defaultPressed = false,
+  syncGroup,
+  variant,
+  size,
+  ...rest
+} = Astro.props;
 
 const dataState = defaultPressed ? "on" : "off";
 ---
@@ -83,19 +90,24 @@ const dataState = defaultPressed ? "on" : "off";
 
     private setupEventListeners(): void {
       this.toggle.addEventListener("click", () => this.handleToggle());
-      this.toggle.addEventListener("keydown", (event) => this.handleKeyDown(event));
+      this.toggle.addEventListener("keydown", (event) =>
+        this.handleKeyDown(event),
+      );
     }
 
     private setupSyncListener(): void {
       if (!this.syncGroup) return;
 
-      document.addEventListener(`starwind-toggle-sync:${this.syncGroup}`, ((e: ToggleSyncEvent) => {
-        // Don't sync if this toggle triggered the event
-        if (e.detail.sourceId === this.toggle.id) return;
+      document.addEventListener(
+        `starwind-toggle-sync:${this.syncGroup}`,
+        (e: ToggleSyncEvent) => {
+          // Don't sync if this toggle triggered the event
+          if (e.detail.sourceId === this.toggle.id) return;
 
-        const newPressed = e.detail.pressed;
-        this.updateState(newPressed, false); // false = don't dispatch sync event
-      }) as EventListener);
+          const newPressed = e.detail.pressed;
+          this.updateState(newPressed, false); // false = don't dispatch sync event
+        },
+      );
     }
 
     private handleToggle(): void {
@@ -127,15 +139,18 @@ const dataState = defaultPressed ? "on" : "off";
       this.toggle.setAttribute("data-state", newState);
 
       // Dispatch change event (always fired for user to listen to)
-      const changeEvent = new CustomEvent<ToggleChangeEvent["detail"]>("starwind-toggle:change", {
-        detail: {
-          pressed,
-          toggleId: this.toggle.id,
-          syncGroup: this.syncGroup,
+      const changeEvent = new CustomEvent<ToggleChangeEvent["detail"]>(
+        "starwind-toggle:change",
+        {
+          detail: {
+            pressed,
+            toggleId: this.toggle.id,
+            syncGroup: this.syncGroup,
+          },
+          bubbles: true,
+          cancelable: true,
         },
-        bubbles: true,
-        cancelable: true,
-      });
+      );
 
       this.toggle.dispatchEvent(changeEvent);
 
@@ -161,11 +176,16 @@ const dataState = defaultPressed ? "on" : "off";
   let toggleCounter = 0;
 
   const setupToggles = () => {
-    document.querySelectorAll<HTMLButtonElement>(".starwind-toggle").forEach((toggle) => {
-      if (!toggleInstances.has(toggle)) {
-        toggleInstances.set(toggle, new ToggleHandler(toggle, toggleCounter++));
-      }
-    });
+    document
+      .querySelectorAll<HTMLButtonElement>(".starwind-toggle")
+      .forEach((toggle) => {
+        if (!toggleInstances.has(toggle)) {
+          toggleInstances.set(
+            toggle,
+            new ToggleHandler(toggle, toggleCounter++),
+          );
+        }
+      });
   };
 
   setupToggles();
