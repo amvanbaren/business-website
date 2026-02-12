@@ -1,22 +1,27 @@
 ---
-import Navigation from "./Navigation.astro";
-import Menu from "./Menu.astro";
-import ThemeToggle from "./ThemeToggle.astro";
+import type { HTMLAttributes } from "astro/types";
+import { tv } from "tailwind-variants";
+import Button from "./starwind/button";
+
+interface Props extends HTMLAttributes<"header"> {
+  class?: string;
+}
+
+const headerStyles = tv({
+  base: "@container w-full border-b py-12",
+});
+
+const { class: className, ...rest } = Astro.props;
 ---
 
-<style>
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
-
-<header>
-  <nav>
-    <div>
-      <ThemeToggle />
-      <Menu />
+<header class={headerStyles({ class: className })} {...rest}>
+  <div class="mx-auto w-full max-w-7xl px-4">
+    <div class="flex justify-between items-center">
+      <div><a href="/" class="text-2xl font-extrabold">PRECIES.</a></div>
+      <nav class="flex gap-4 sm:gap-6">
+        <Button variant="ghost" href="/about/"><b>About</b></Button>
+        <Button variant="ghost" href="/consulting/"><b>Consulting</b></Button>
+      </nav>
     </div>
-    <Navigation />
-  </nav>
+  </div>
 </header>
