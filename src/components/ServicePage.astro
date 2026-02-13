@@ -2,7 +2,6 @@
 import type { HTMLAttributes } from "astro/types";
 import { tv } from "tailwind-variants";
 
-import { Prose } from "@/components/starwind/prose";
 import { Separator } from "@/components/starwind/separator";
 
 interface Props extends HTMLAttributes<"article"> {
@@ -36,8 +35,6 @@ const { title, description, class: className, ...rest } = Astro.props;
 
   <Separator class="my-10" />
 
-  <!-- Prose content slot -->
-  <Prose class="max-w-none">
-    <slot />
-  </Prose>
+  <!-- Content slot -->
+  <slot />
 </article>
