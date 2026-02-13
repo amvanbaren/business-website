@@ -4,7 +4,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
   --spacing: 0.27rem;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -77,17 +79,17 @@
 }
 
 :root {
-  --background: #F9FAFB;
+  --background: #f9fafb;
   --foreground: #060504;
-  --card: #F9FAFB;
+  --card: #f9fafb;
   --card-foreground: #060504;
-  --popover: #F9FAFB;
+  --popover: #f9fafb;
   --popover-foreground: #060504;
-  --primary: #4F46E5;
-  --primary-foreground: #F9FAFB;
-  --primary-accent: #4F46E5;
+  --primary: #4f46e5;
+  --primary-foreground: #f9fafb;
+  --primary-accent: #4f46e5;
   --secondary: var(--color-fuchsia-700);
-  --secondary-foreground: #F9FAFB;
+  --secondary-foreground: #f9fafb;
   --secondary-accent: var(--color-fuchsia-700);
   --muted: var(--color-neutral-100);
   --muted-foreground: #323232;
@@ -100,17 +102,17 @@
   --warning: var(--color-amber-300);
   --warning-foreground: var(--color-amber-950);
   --error: var(--color-red-700);
-  --error-foreground: #F9FAFB;
+  --error-foreground: #f9fafb;
   --border: var(--color-neutral-200);
   --input: var(--color-neutral-200);
   --outline: var(--color-neutral-400);
   --radius: 0.625rem;
 
   /* sidebar variables */
-  --sidebar-background: #F9FAFB;
+  --sidebar-background: #f9fafb;
   --sidebar-foreground: #060504;
-  --sidebar-primary: #4F46E5;
-  --sidebar-primary-foreground: #F9FAFB;
+  --sidebar-primary: #4f46e5;
+  --sidebar-primary-foreground: #f9fafb;
   --sidebar-accent: var(--color-neutral-100);
   --sidebar-accent-foreground: #060504;
   --sidebar-border: var(--color-neutral-200);
@@ -119,21 +121,21 @@
 
 .dark {
   --background: #060504;
-  --foreground: #F9FAFB;
+  --foreground: #f9fafb;
   --card: #060504;
-  --card-foreground: #F9FAFB;
+  --card-foreground: #f9fafb;
   --popover: #060504;
-  --popover-foreground: #F9FAFB;
-  --primary: #4F46E5;
-  --primary-foreground: #F9FAFB;
-  --primary-accent: #4F46E5;
+  --popover-foreground: #f9fafb;
+  --primary: #4f46e5;
+  --primary-foreground: #f9fafb;
+  --primary-accent: #4f46e5;
   --secondary: var(--color-fuchsia-700);
-  --secondary-foreground: #F9FAFB;
+  --secondary-foreground: #f9fafb;
   --secondary-accent: var(--color-fuchsia-400);
   --muted: var(--color-neutral-800);
   --muted-foreground: #cdcdcd;
   --accent: var(--color-neutral-700);
-  --accent-foreground: #F9FAFB;
+  --accent-foreground: #f9fafb;
   --info: var(--color-sky-300);
   --info-foreground: var(--color-sky-950);
   --success: var(--color-green-300);
@@ -141,18 +143,18 @@
   --warning: var(--color-amber-300);
   --warning-foreground: var(--color-amber-950);
   --error: var(--color-red-800);
-  --error-foreground: #F9FAFB;
+  --error-foreground: #f9fafb;
   --border: --alpha(var(--color-neutral-50) / 10%);
   --input: --alpha(var(--color-neutral-50) / 15%);
   --outline: var(--color-neutral-500);
 
   /* sidebars variables */
   --sidebar-background: #060504;
-  --sidebar-foreground: #F9FAFB;
-  --sidebar-primary: #4F46E5;
-  --sidebar-primary-foreground: #F9FAFB;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #4f46e5;
+  --sidebar-primary-foreground: #f9fafb;
   --sidebar-accent: var(--color-neutral-800);
-  --sidebar-accent-foreground: #F9FAFB;
+  --sidebar-accent-foreground: #f9fafb;
   --sidebar-border: var(--color-neutral-800);
   --sidebar-outline: var(--color-neutral-600);
 }
