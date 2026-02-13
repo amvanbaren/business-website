@@ -2,13 +2,24 @@
 import ServicePage from "@/components/ServicePage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Prose from "@/components/starwind/prose";
+import { personSchema } from "@/const";
 
 const pageTitle = "About";
+const pageDescription = "";
+const pageUrl = "about";
+const pageImage = "";
+const jsonSchema = personSchema;
 const description =
   "I didn't start out as a consultant; I started as a software developer. But working independently for nearly a decade changed how I see software. I realized early on that a system's success isn't written in the code — it’s felt in the product.";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageUrl={pageUrl}
+  pageImage={pageImage}
+  jsonSchema={jsonSchema}
+>
   <ServicePage title={pageTitle} description={description}>
     <div class="flex flex-col sm:flex-row-reverse items-center sm:gap-2">
       <div class="flex-1">

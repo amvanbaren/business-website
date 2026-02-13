@@ -3,13 +3,25 @@ import ServicePage from "@/components/ServicePage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "@/components/starwind/button";
 import Prose from "@/components/starwind/prose";
+import { serviceSchema } from "@/const";
 
 const pageTitle = "Consulting";
 const description =
   "Every team hits moments where the product feels slow, the architecture feels heavy, or the roadmap feels impossible to execute. I help teams cut through that complexity so they can move forward with clarity and confidence.";
+
+const pageDescription = "";
+const pageUrl = "consulting";
+const pageImage = "";
+const jsonSchema = serviceSchema;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageUrl={pageUrl}
+  pageImage={pageImage}
+  jsonSchema={jsonSchema}
+>
   <ServicePage title={pageTitle} description={description}>
     <Prose class="max-w-none">
       <h2>What I Do</h2>

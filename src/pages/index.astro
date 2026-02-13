@@ -2,11 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import PageCard from "@/components/PageCard.astro";
+import { organizationSchema } from "@/const";
 
 const pageTitle = "Home Page";
+const pageDescription = "";
+const pageUrl = "";
+const pageImage = "";
+const jsonSchema = organizationSchema;
 ---
 
-<BaseLayout pageTitle={pageTitle} class="flex flex-col justify-center">
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageUrl={pageUrl}
+  pageImage={pageImage}
+  jsonSchema={jsonSchema}
+  class="flex flex-col justify-center"
+>
   <Hero
     class="py-24"
     heading="Software consultant for teams that want clarity and confidence"
