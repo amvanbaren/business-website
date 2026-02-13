@@ -48,6 +48,7 @@ const {
     private closeTimerRef: number | null = null;
     private lastOpenSource: "keyboard" | "mouse" = "keyboard";
     private lastCloseSource: "keyboard" | "mouse" = "keyboard";
+    private lastScrollY = 0;
 
     constructor(dropdown: HTMLElement, dropdownIdx: number) {
       this.dropdown = dropdown;
@@ -163,6 +164,13 @@ const {
           this.closeDropdown();
         }
       });
+
+      document.addEventListener("scroll", (e) => {
+        if (this.isOpen && window.scrollY !== this.lastScrollY) {
+            this.closeDropdown();
+            this.lastScrollY = window.scrollY;
+        }
+      }, { passive: true });
 
       // Handle keyboard navigation and item selection within dropdown
       this.content.addEventListener("keydown", (e) => {
