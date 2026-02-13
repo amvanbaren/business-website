@@ -18,6 +18,7 @@ export const organizationSchema = `{
 export const personSchema = `[{
   "@context": "https://schema.org/", 
   "@type": "BreadcrumbList", 
+  "name": "Breadcrumbs",
   "itemListElement": [{
     "@type": "ListItem", 
     "position": 1, 
@@ -49,6 +50,7 @@ export const serviceSchema = `[
    {
       "@context":"https://schema.org/",
       "@type":"BreadcrumbList",
+      "name": "Breadcrumbs",
       "itemListElement":[
          {
             "@type":"ListItem",
