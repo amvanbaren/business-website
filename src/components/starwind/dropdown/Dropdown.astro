@@ -165,12 +165,16 @@ const {
         }
       });
 
-      document.addEventListener("scroll", (e) => {
-        if (this.isOpen && window.scrollY !== this.lastScrollY) {
+      document.addEventListener(
+        "scroll",
+        () => {
+          if (this.isOpen && window.scrollY !== this.lastScrollY) {
             this.closeDropdown();
             this.lastScrollY = window.scrollY;
-        }
-      }, { passive: true });
+          }
+        },
+        { passive: true },
+      );
 
       // Handle keyboard navigation and item selection within dropdown
       this.content.addEventListener("keydown", (e) => {
