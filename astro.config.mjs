@@ -4,9 +4,11 @@ import { defineConfig } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "http://localhost:4321",
+  site: "https://business-website-ckb.pages.dev",
 
   adapter: cloudflare({
     platformProxy: {
@@ -15,7 +17,10 @@ export default defineConfig({
 
     imageService: "cloudflare",
   }),
-	vite: {
-		plugins: [tailwindcss()],
+
+  vite: {
+      plugins: [tailwindcss()],
 	},
+
+  integrations: [sitemap()],
 });
