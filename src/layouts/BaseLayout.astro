@@ -44,16 +44,6 @@ const socialLinks: SocialLink[] = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={`${url}/${pageImage}/`} />
-    {
-      pageUrl === "about" && (
-        <>
-          <meta property="og:type" content="profile" />
-          <meta property="profile:first_name" content="Aart" />
-          <meta property="profile:last_name" content="van Baren" />
-          <meta property="profile:username" content="aartvanbaren" />
-        </>
-      )
-    }
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
