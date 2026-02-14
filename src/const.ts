@@ -11,7 +11,7 @@ export const organizationSchema = `{
   "sameAs": "${linkedinProfile}",
   "contactPoint": {
     "@type": "ContactPoint",
-    "url": "https://calendly.com",
+    "url": "https://calendly.com/amvanbaren/30min",
     "contactType": "sales"
   }
 }`;
@@ -74,7 +74,7 @@ export const serviceSchema = `[
       "provider":${organizationSchema},
       "potentialAction":{
          "@type":"ScheduleAction",
-         "target":"https://calendly.com",
+         "target":"https://calendly.com/amvanbaren/30min",
          "name":"Book a Fit Call"
       },
       "description":"Software consulting specializing in system reliability, performance optimization, and scalable software architecture for complex systems.",
