@@ -75,16 +75,9 @@ export const serviceSchema = `[
       "potentialAction":{
          "@type":"ScheduleAction",
          "target":"https://calendly.com",
-         "name":"Book Free Fit Call"
+         "name":"Book a Fit Call"
       },
       "description":"Software consulting specializing in system reliability, performance optimization, and scalable software architecture for complex systems.",
-      "offers":{
-         "@type":"Offer",
-         "name":"Free Fit Call",
-         "description":"A free 30-minute call to evaluate project fit.",
-         "price":"0",
-         "priceCurrency":"USD"
-      },
       "hasOfferCatalog":{
          "@context":"https://schema.org",
          "@type":"OfferCatalog",
