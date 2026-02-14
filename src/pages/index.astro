@@ -2,12 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import PageCard from "@/components/PageCard.astro";
-import { organizationSchema } from "@/const";
+import { companyName, organizationSchema, url } from "@/const";
 
-const pageTitle = "Home Page";
-const pageDescription = "";
+const pageTitle = `${companyName} | Software Consulting`;
+const pageDescription = "Software consultant helping engineering teams solve performance issues, strengthen reliability, and ship faster.";
 const pageUrl = "";
-const pageImage = "";
+const pageImage = `${url}/og-home.png`;
 const jsonSchema = organizationSchema;
 ---
 
