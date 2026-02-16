@@ -25,11 +25,15 @@ const description =
   <ServicePage title={title} description={description}>
     <div class="flex flex-col sm:flex-row-reverse items-center sm:gap-2">
       <div class="flex-1">
-        <img
-          src="/amvanbaren.png"
-          class="rounded-xs md:rounded-sm lg:rounded-md"
-          alt="Headshot of Aart van Baren."
-        />
+        <picture>
+          <source srcset="/amvanbaren.avif" type="image/avif" />
+          <source srcset="/amvanbaren.webp" type="image/webp" />
+          <img
+            src="/amvanbaren.png"
+            class="rounded-xs md:rounded-sm lg:rounded-md"
+            alt="Headshot of Aart van Baren."
+          />
+        </picture>
       </div>
       <Prose class="flex-1 max-w-none mt-9 sm:mt-0">
         <h2>From Code to Context</h2>
