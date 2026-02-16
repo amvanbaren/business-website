@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/starwind/card";
+import Button from "@/components/starwind/button";
+
+interface Props extends HTMLAttributes<"div"> {
+  title: string;
+  description: string;
+  link: string;
+  href: string;
+}
+
+const { title, description, action, href } = Astro.props;
+---
+
+<Card class="rounded-xl gap-1">
+  <CardHeader>
+    <CardTitle class="font-semibold">{title}</CardTitle>
+  </CardHeader>
+  <CardContent class="h-full">
+    <div class="h-full flex flex-col gap-4 items-start justify-between">
+      <p>{description}</p>
+      <Button variant="outline" class="font-semibold" href={href}
+        >{action}</Button
+      >
+    </div>
+  </CardContent>
+</Card>

@@ -1,27 +1,78 @@
 ---
+import "@/styles/starwind.css";
+import IconBrandGithub from "@tabler/icons/filled/brand-github.svg";
+import IconBrandLinkedin from "@tabler/icons/filled/brand-linkedin.svg";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import Footer, { SocialLink } from "../components/Footer.astro";
+import ThemeInit from "@/components/starwind/theme-toggle/ThemeInit.astro";
+import { tv } from "tailwind-variants";
+import { companyName, githubProfile, linkedinProfile, url } from "@/const";
 
-const { pageTitle } = Astro.props;
+const layoutStyles = tv({
+  base: "flex-1",
+});
+
+const {
+  class: className,
+  pageTitle,
+  pageDescription,
+  pageUrl,
+  pageImage,
+  jsonSchema,
+} = Astro.props;
+const socialLinks: SocialLink[] = [
+  {
+    name: "LinkedIn",
+    href: linkedinProfile,
+    icon: IconBrandLinkedin,
+  },
+  {
+    name: "GitHub",
+    href: githubProfile,
+    icon: IconBrandGithub,
+  },
+];
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`${url}/${pageUrl}/`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={`${url}/${pageImage}/`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Precies." />
+    <link rel="manifest" href="/site.webmanifest" />
+    <ThemeInit />
+    <meta name="generator" content={Astro.generator} />
+    {
+      jsonSchema && (
+        <script type="application/ld+json" set:html={jsonSchema} is:inline />
+      )
+    }
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <Header class="py-3" />
+      <main class={layoutStyles({ class: className })}>
         <slot />
-        <Footer />
-        <script>
-            import "../scripts/menu.ts";
-        </script>
-    </body>
+      </main>
+      <Footer
+        socialLinks={socialLinks}
+        companyName={companyName}
+        class="py-3"
+      />
+    </div>
+  </body>
 </html>

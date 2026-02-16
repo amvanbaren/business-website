@@ -1,21 +1,75 @@
 ---
-import Navigation from "./Navigation.astro";
-import Menu from "./Menu.astro";
-import ThemeToggle from "./ThemeToggle.astro";
----
-<style>
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
+import type { HTMLAttributes } from "astro/types";
+import { tv } from "tailwind-variants";
+import Button from "@/components/starwind/button";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
+} from "@/components/starwind/dropdown";
+import Menu2 from "@tabler/icons/outline/menu-2.svg";
 
-<header>
-    <nav>
-        <div>
-            <ThemeToggle />
-            <Menu />
-        </div>
-        <Navigation />
-    </nav>
+interface Props extends HTMLAttributes<"header"> {
+  class?: string;
+}
+
+const headerStyles = tv({
+  base: "@container w-full sticky top-0 z-10 border-b bg-background py-12",
+});
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<header class={headerStyles({ class: className })} {...rest}>
+  <div class="mx-auto w-full max-w-7xl px-4">
+    <div class="flex justify-between items-center">
+      <div><a href="/" class="text-2xl font-extrabold">PRECIES.</a></div>
+      <nav class="hidden sm:flex sm:gap-6">
+        <Button variant="ghost" href="/consulting/" class="font-semibold"
+          >Consulting</Button
+        >
+        <Button variant="ghost" href="/about/" class="font-semibold"
+          >About</Button
+        >
+        <Button
+          variant="primary"
+          class="font-semibold"
+          href="https://calendly.com/amvanbaren/30min">Book a Call</Button
+        >
+      </nav>
+      <Dropdown class="sm:hidden">
+        <DropdownTrigger asChild>
+          <Button variant="ghost" aria-label="Open navigation menu"
+            ><Menu2 /></Button
+          >
+        </DropdownTrigger>
+        <nav>
+          <DropdownContent
+            align="end"
+            class="flex flex-col gap-2 bg-background"
+          >
+            <DropdownItem
+              as="a"
+              href="/consulting/"
+              class="focus:bg-muted focus:text-foreground cursor-pointer font-semibold"
+              >Consulting</DropdownItem
+            >
+            <DropdownItem
+              as="a"
+              href="/about/"
+              class="focus:bg-muted focus:text-foreground cursor-pointer font-semibold"
+              >About</DropdownItem
+            >
+            <DropdownItem
+              as="a"
+              href="https://calendly.com/amvanbaren/30min"
+              class="bg-primary text-primary-foreground focus:bg-primary/90 cursor-pointer font-semibold"
+              >Book a Call</DropdownItem
+            >
+          </DropdownContent>
+        </nav>
+      </Dropdown>
+    </div>
+  </div>
 </header>

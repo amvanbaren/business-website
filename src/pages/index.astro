@@ -1,9 +1,46 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.tsx';
-const pageTitle = "Home Page";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageCard from "@/components/PageCard.astro";
+import { companyName, organizationSchema, url } from "@/const";
+
+const pageTitle = `${companyName} | Software Consulting`;
+const pageDescription =
+  "Software consultant helping engineering teams solve performance issues, strengthen reliability, and ship faster.";
+const pageUrl = "";
+const pageImage = `${url}/og-home.png`;
+const jsonSchema = organizationSchema;
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageUrl={pageUrl}
+  pageImage={pageImage}
+  jsonSchema={jsonSchema}
+  class="flex flex-col justify-center"
+>
+  <Hero
+    class="py-24"
+    heading="Software consultant for teams that want clarity and confidence"
+    description="I help engineering teams solve performance issues, strengthen reliability, and ship faster without accumulating extra debt. If your product feels fragile or your roadmap has stalled, let's talk."
+    primaryButtonText="Schedule a Call"
+    primaryButtonHref="https://calendly.com/amvanbaren/30min"
+  />
+  <div class="@container mx-auto w-full max-w-4xl px-4 pt-24 pb-48">
+    <div class="mx-auto grid gap-8 @2xl:grid-cols-2">
+      <PageCard
+        title="What I Do"
+        description="Hands-on consulting to solve performance bottlenecks, strengthen reliability, and streamline your release cycles."
+        action="Explore Services"
+        href="/consulting/"
+      />
+      <PageCard
+        title="How I Think"
+        description="I bring an outside‑in perspective to every project, leaving systems healthier and more predictable than I found them."
+        action="About Me"
+        href="/about/"
+      />
+    </div>
+  </div>
 </BaseLayout>
