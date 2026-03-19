@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://business-website-ckb.pages.dev",
-  output: 'server',
+  output: 'static',
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
