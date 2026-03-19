@@ -21,6 +21,10 @@
     {
       "pattern": "precies.software",
       "custom_domain": true
+    },
+    {
+      "pattern": "www.precies.software",
+      "custom_domain": true
     }
   ],
   "preview_urls": true
