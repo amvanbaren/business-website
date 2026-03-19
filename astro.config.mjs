@@ -8,14 +8,14 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://business-website-ckb.pages.dev",
+  site: "https://precies.software",
 
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
     },
 
-    imageService: "cloudflare",
+    imageService: { build: 'compile', runtime: 'cloudflare-binding' },
   }),
 
   vite: {
