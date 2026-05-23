@@ -5,20 +5,20 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@astrojs/cloudflare@npm:^13.1.10":
-  version: 13.3.1
-  resolution: "@astrojs/cloudflare@npm:13.3.1"
+"@astrojs/cloudflare@npm:^13.5.4":
+  version: 13.5.4
+  resolution: "@astrojs/cloudflare@npm:13.5.4"
   dependencies:
-    "@astrojs/internal-helpers": "npm:0.9.0"
+    "@astrojs/internal-helpers": "npm:0.9.1"
     "@astrojs/underscore-redirects": "npm:1.0.3"
     "@cloudflare/vite-plugin": "npm:^1.32.3"
     piccolore: "npm:^0.1.3"
     tinyglobby: "npm:^0.2.15"
     vite: "npm:^7.3.2"
   peerDependencies:
-    astro: ^6.0.0
+    astro: ^6.3.0
     wrangler: ^4.83.0
-  checksum: 10c0/68c4b34f04cf37c236d401c50cac9b95b4e5587ef5a0eeb1c3a695204652b962af016718cb98abfb5f8bec2038568a3c0c67fa26d20359893bcb36c5ef281167
+  checksum: 10c0/d6cacdaf9d7d2d6604dbf4f47145b30a0476d78ce433379412a12498591235cc1b8f29a4aead9c52ff800ff8d929bc589822889bb075fdcd96e7ec47c6126362
   languageName: node
   linkType: hard
 
@@ -42,6 +42,15 @@ __metadata:
   dependencies:
     picomatch: "npm:^4.0.4"
   checksum: 10c0/6513b28955d1d4fe250c2978e0496d1a5b72be0a19db427e475bc31930d1704cdea63f67862eefd046d480aa7f1fb775b14e143e66ef70eabf187f17655d0047
+  languageName: node
+  linkType: hard
+
+"@astrojs/internal-helpers@npm:0.9.1":
+  version: 0.9.1
+  resolution: "@astrojs/internal-helpers@npm:0.9.1"
+  dependencies:
+    picomatch: "npm:^4.0.4"
+  checksum: 10c0/013453dc19271fe7ccdd239d1962a8d67a9c0763083153fd4f0e33a946c2cace32f8f90052e14aac9b70ac3313e9724c348f82a4d6fc5bc1748bd5175b277fa0
   languageName: node
   linkType: hard
 
@@ -2810,7 +2819,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "business-website@workspace:."
   dependencies:
-    "@astrojs/cloudflare": "npm:^13.1.10"
+    "@astrojs/cloudflare": "npm:^13.5.4"
     "@astrojs/sitemap": "npm:^3.7.2"
     "@babel/core": "npm:^7.29.0"
     "@eslint/js": "npm:^10.0.1"
