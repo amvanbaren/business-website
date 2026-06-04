@@ -14,8 +14,14 @@
     "not_found_handling": "single-page-application",
     "binding": "ASSETS"
   },
+  "kv_namespaces": [
+    {
+      "binding": "business-website-session",
+      "id": "3ecab42216194d0985632b03acfb6120"
+    }
+  ],
   "observability": {
-    "enabled": true,
+    "enabled": false,
   },
   "routes": [
     {
