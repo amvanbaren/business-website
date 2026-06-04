@@ -16,7 +16,7 @@
   },
   "kv_namespaces": [
     {
-      "binding": "business-website-session",
+      "binding": "SESSION",
       "id": "3ecab42216194d0985632b03acfb6120"
     }
   ],
