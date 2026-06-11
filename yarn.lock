@@ -22,7 +22,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^2.0.0, @astrojs/compiler@npm:^2.9.1":
+"@astrojs/compiler@npm:^2.0.0 || ^3.0.0":
+  version: 3.0.1
+  resolution: "@astrojs/compiler@npm:3.0.1"
+  checksum: 10c0/f2ec194a6c0b18044cf77b9bc3ff48f972d3c017dbdd9f8d4512fe7b0c1abcd2996cb4b8378831f0432f7a4289248235a082b95f90a1d0c7ca7e6a5c24fe6779
+  languageName: node
+  linkType: hard
+
+"@astrojs/compiler@npm:^2.9.1":
   version: 2.13.0
   resolution: "@astrojs/compiler@npm:2.13.0"
   checksum: 10c0/d8f4ee217468acc03beeb1f632cad8811622f7fef9075133cb5c327ec7ce290bc04e55e74740011800618d9a06be5cc3c2a93fd574c8c3421bad00ad133625c3
@@ -2331,23 +2338,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-eslint-parser@npm:^1.0.2":
-  version: 1.2.2
-  resolution: "astro-eslint-parser@npm:1.2.2"
+"astro-eslint-parser@npm:^1.3.0":
+  version: 1.4.0
+  resolution: "astro-eslint-parser@npm:1.4.0"
   dependencies:
-    "@astrojs/compiler": "npm:^2.0.0"
+    "@astrojs/compiler": "npm:^2.0.0 || ^3.0.0"
     "@typescript-eslint/scope-manager": "npm:^7.0.0 || ^8.0.0"
     "@typescript-eslint/types": "npm:^7.0.0 || ^8.0.0"
     astrojs-compiler-sync: "npm:^1.0.0"
     debug: "npm:^4.3.4"
-    entities: "npm:^6.0.0"
+    entities: "npm:^7.0.0"
     eslint-scope: "npm:^8.0.1"
     eslint-visitor-keys: "npm:^4.0.0"
     espree: "npm:^10.0.0"
     fast-glob: "npm:^3.3.3"
     is-glob: "npm:^4.0.3"
     semver: "npm:^7.3.8"
-  checksum: 10c0/e4010f5506bc0be29f8f119a6e10d91d6186f18715a14f02f2b5921d79311620015ed02a68bb352e90ce2d1766a5b3118083d526ba30d2eac3db841ea631822e
+  checksum: 10c0/54afbef78e19d79e6cf3a86d268a6688282a5ff87d5c77e81202d14f567ef169aa18b822cba66245456ca126e3d90aee5f97ce706c86b27b2f7d508c6ca7444c
   languageName: node
   linkType: hard
 
@@ -2572,7 +2579,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.59.3"
     astro: "npm:^6.4.6"
     eslint: "npm:^9.39.4"
-    eslint-plugin-astro: "npm:^1.5.0"
+    eslint-plugin-astro: "npm:^1.7.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     prettier: "npm:^3.8.3"
     prettier-plugin-astro: "npm:^0.14.1"
@@ -3106,6 +3113,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "entities@npm:7.0.1"
+  checksum: 10c0/b4fb9937bb47ecb00aaaceb9db9cdd1cc0b0fb649c0e843d05cf5dbbd2e9d2df8f98721d8b1b286445689c72af7b54a7242fc2d63ef7c9739037a8c73363e7ca
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -3461,21 +3475,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-astro@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "eslint-plugin-astro@npm:1.5.0"
+"eslint-plugin-astro@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "eslint-plugin-astro@npm:1.7.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
     "@typescript-eslint/types": "npm:^7.7.1 || ^8"
-    astro-eslint-parser: "npm:^1.0.2"
+    astro-eslint-parser: "npm:^1.3.0"
     eslint-compat-utils: "npm:^0.6.0"
     globals: "npm:^16.0.0"
     postcss: "npm:^8.4.14"
     postcss-selector-parser: "npm:^7.0.0"
   peerDependencies:
     eslint: ">=8.57.0"
-  checksum: 10c0/e18ec1fd648be7cc9ae196983cb8f8567afc8b317c3d0a7fcb9b12c44ba93a232d8e7eb5942f93e7c092e2e2dcd07289de91a590f7aa8f45ea17921abf8f559b
+  checksum: 10c0/700c75340122755f838c2c5c5163980b037bb6f0d74b11d99a6475f994eb77b380fd42c63d138f60423747ad1cb936444ddf3f21ea71d5727fd0e312c6e82eea
   languageName: node
   linkType: hard
 
