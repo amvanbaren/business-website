@@ -47,5 +47,5 @@
     "picomatch@^4.0.2": "^4.0.4",
     "picomatch@^4.0.3": "^4.0.4"
   },
-  "packageManager": "yarn@4.16.0"
+  "packageManager": "yarn@4.17.0"
 }
