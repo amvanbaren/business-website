@@ -11,8 +11,8 @@ import Button from "@/components/starwind/button";
 interface Props extends HTMLAttributes<"div"> {
   title: string;
   description: string;
-  link: string;
   href: string;
+  action: string;
 }
 
 const { title, description, action, href } = Astro.props;
