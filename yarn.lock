@@ -122,13 +122,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@astrojs/compiler@npm:4.0.0"
-  checksum: 10c0/b82c245f88db7fe741128b2c057304866f42e87f296b2bf5962aa84e4bef1aa5c323a4fec8621db4f6ef7195cd0f90d9059c481f7d2708bbf983b481299dc5c0
-  languageName: node
-  linkType: hard
-
 "@astrojs/internal-helpers@npm:0.10.1":
   version: 0.10.1
   resolution: "@astrojs/internal-helpers@npm:0.10.1"
@@ -1482,13 +1475,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pkgr/core@npm:^0.2.9":
-  version: 0.2.9
-  resolution: "@pkgr/core@npm:0.2.9"
-  checksum: 10c0/ac8e4e8138b1a7a4ac6282873aef7389c352f1f8b577b4850778f5182e4a39a5241facbe48361fec817f56d02b51691b383010843fb08b34a8e8ea3614688fd5
-  languageName: node
-  linkType: hard
-
 "@poppinss/colors@npm:^4.1.5":
   version: 4.1.6
   resolution: "@poppinss/colors@npm:4.1.6"
@@ -2324,22 +2310,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-eslint-parser@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "astro-eslint-parser@npm:2.1.0"
+"astro-eslint-parser@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "astro-eslint-parser@npm:3.0.0"
   dependencies:
-    "@astrojs/compiler": "npm:^4.0.0"
+    "@astrojs/compiler-rs": "npm:^0.3.1"
     "@typescript-eslint/scope-manager": "npm:^8.61.0"
     "@typescript-eslint/types": "npm:^8.61.0"
-    astrojs-compiler-sync: "npm:^1.0.0"
-    debug: "npm:^4.3.4"
-    entities: "npm:^8.0.0"
+    debug: "npm:^4.4.3"
     eslint-scope: "npm:^9.1.2"
     eslint-visitor-keys: "npm:^5.0.1"
     espree: "npm:^11.2.0"
-    semver: "npm:^7.3.8"
+    semver: "npm:^7.8.4"
     tinyglobby: "npm:^0.2.17"
-  checksum: 10c0/4344b4e24bb095495f45338ee448de0aa0001c2080f03506ea55c0cc37fc9ca239565ccafafbdea845504a8b9f0ec00085dd2224c2a7f7f73ad0d709f7445529
+  checksum: 10c0/4f5e1166d615fe65844864be69b09eebf85b8e455db72aba2144f98ff196525a21bd1e038f6aee19070a6e8b06c92c7ac213ec0c4a8da083b87001643e5809c4
   languageName: node
   linkType: hard
 
@@ -2412,17 +2396,6 @@ __metadata:
   bin:
     astro: ./bin/astro.mjs
   checksum: 10c0/5dfd9749fc37c8503d2aed63fff27c924c6934dd79189fbe81320196c89a4d28dcb6040b213ac836a90a559c898a2cb66e8cb5a42d3d634fdaf4e25ec37fceff
-  languageName: node
-  linkType: hard
-
-"astrojs-compiler-sync@npm:^1.0.0":
-  version: 1.1.1
-  resolution: "astrojs-compiler-sync@npm:1.1.1"
-  dependencies:
-    synckit: "npm:^0.11.0"
-  peerDependencies:
-    "@astrojs/compiler": ">=0.27.0"
-  checksum: 10c0/d48156daf04b237bc9ad22dd5b8e852991ea6943f65a7cd3c4d93e6ee1debd6ecd5d961b1fb45892ab80017e7f85959676781daaf90f46301deeef47f16ee4d9
   languageName: node
   linkType: hard
 
@@ -2518,7 +2491,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.63.0"
     astro: "npm:^7.0.9"
     eslint: "npm:^10.6.0"
-    eslint-plugin-astro: "npm:^2.1.1"
+    eslint-plugin-astro: "npm:^3.0.1"
     prettier: "npm:^3.9.5"
     prettier-plugin-astro: "npm:^0.14.1"
     tailwind-merge: "npm:^3.6.0"
@@ -2890,13 +2863,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "entities@npm:8.0.0"
-  checksum: 10c0/938e631664c19451823344a351aeeafd74fae2d5fa51e4d5b6ff635afaefd4bacf0f609989888c04c42733f46ffdac15211608267ebb02488005891a4793e94d
-  languageName: node
-  linkType: hard
-
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -3028,17 +2994,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-astro@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "eslint-plugin-astro@npm:2.1.1"
+"eslint-plugin-astro@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "eslint-plugin-astro@npm:3.0.1"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.5.1"
     "@jridgewell/sourcemap-codec": "npm:^1.5.0"
     "@typescript-eslint/types": "npm:^8.61.0"
-    astro-eslint-parser: "npm:^2.0.0"
+    astro-eslint-parser: "npm:^3.0.0"
     espree: "npm:^11.0.0"
     globals: "npm:^17.0.0"
-    parse5: "npm:^8.0.0"
     postcss: "npm:^8.5.3"
     postcss-selector-parser: "npm:^7.1.0"
   peerDependencies:
@@ -3050,7 +3015,7 @@ __metadata:
       optional: true
     eslint-plugin-jsx-a11y:
       optional: true
-  checksum: 10c0/423921a8273ec1df9f2c84242a48d0b010377de743a2eab1f91e08695968f72866cb2fd9e412da4117531f4f8d2369910658a27646baa8c938e0c067219a18b1
+  checksum: 10c0/3572d6b8575ed0b376e7fff6b2b21f46af88c20310dd8c3b939fd14e7d3b3dbcf4f1c37e84e1ee2fe1c1ae6c0f2b2c5852429b65d57cce6c2ea4a88b4f69a76f
   languageName: node
   linkType: hard
 
@@ -4355,15 +4320,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^8.0.0":
-  version: 8.0.1
-  resolution: "parse5@npm:8.0.1"
-  dependencies:
-    entities: "npm:^8.0.0"
-  checksum: 10c0/c3c1c5aab55f6e4be5245599790e56e64be7764a4a0edd7f98db4fe3bb380f63add752fa047dff0496446c25f4104f0c7c1967723de640bde92306a7bb67ed2f
-  languageName: node
-  linkType: hard
-
 "path-exists@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
@@ -4742,7 +4698,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.3.8, semver@npm:^7.7.3":
+"semver@npm:^7.3.5, semver@npm:^7.7.3":
   version: 7.7.3
   resolution: "semver@npm:7.7.3"
   bin:
@@ -5098,15 +5054,6 @@ __metadata:
   bin:
     svgo: ./bin/svgo.js
   checksum: 10c0/f61f9957b42e0c97593b49a01f3b93cb239b2e818efccb056fcc866d622704d9021c4ef8bd0287264c3e4f33da60e4af14d841b4a624b87ff8888e3b896d13d5
-  languageName: node
-  linkType: hard
-
-"synckit@npm:^0.11.0":
-  version: 0.11.12
-  resolution: "synckit@npm:0.11.12"
-  dependencies:
-    "@pkgr/core": "npm:^0.2.9"
-  checksum: 10c0/cc4d446806688ae0d728ae7bb3f53176d065cf9536647fb85bdd721dcefbd7bf94874df6799ff61580f2b03a392659219b778a9254ad499f9a1f56c34787c235
   languageName: node
   linkType: hard
 
