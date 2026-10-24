@@ -43,7 +43,8 @@
     "rollup@^4.43.0": "^4.43.0",
     "picomatch@^4.0.2": "^4.0.4",
     "picomatch@^4.0.3": "^4.0.4",
-    "undici": "^7.30.0"
+    "undici": "^7.30.0",
+    "source-map-js": "^1.2.2"
   },
   "packageManager": "yarn@4.17.0"
 }
